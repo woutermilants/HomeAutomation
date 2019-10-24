@@ -7,16 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class PartyController  {
+public class PartyController {
 
     private final HueService hueService;
 
     @GetMapping("/startPartyMode")
     public void startPartyMode() {
-        try {
-            hueService.partyMode();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new Thread(() -> {
+            try {
+                hueService.partyMode();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 }
