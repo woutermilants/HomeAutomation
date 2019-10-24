@@ -30,9 +30,9 @@ public class HueService {
 
 
             turnLightOn(4);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             turnLightOff(4);
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         }
 
 
