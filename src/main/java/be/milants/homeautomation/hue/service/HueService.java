@@ -43,7 +43,7 @@ public class HueService {
 
         String hueBridgeUrl = "http://192.168.0.221/api/Kbx0n7TMx6eUQa27b576MNADwvngsTarPy5LgLgN/lights/" + lightId + "/state";
         // ResponseEntity<HueLight[]> response = restTemplate.postForEntity(hueBridgeUrl, HueLight[].class, "{'on':true}");
-        HttpEntity<TurnLightOnOffRequest> requestEntity = new HttpEntity<TurnLightOnOffRequest>(new TurnLightOnOffRequest(true, 1, 1, 1), new HttpHeaders());
+        HttpEntity<TurnLightOnOffRequest> requestEntity = new HttpEntity<TurnLightOnOffRequest>(new TurnLightOnOffRequest(true, 200, 200, 5000), new HttpHeaders());
         HttpEntity<Object[]> response = restTemplate.exchange(hueBridgeUrl, HttpMethod.PUT, requestEntity, Object[].class, new HashMap<>());
 
     }
