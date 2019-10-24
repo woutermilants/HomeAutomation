@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PartyController  {
 
-    private HueService hueService;
+    private final HueService hueService;
 
     @GetMapping("/startPartyMode")
     public void startPartyMode() {
